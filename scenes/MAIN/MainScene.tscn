@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://pwx1mb4vw1bg"]
+
+[ext_resource type="Script" path="res://scenes/MAIN/main_scene.gd" id="1_gf115"]
+[ext_resource type="FontFile" uid="uid://ue8wrl75ioxi" path="res://assets/fonts/Blue Sky 8x8 Monospaced.ttf" id="2_op3mt"]
+
+[sub_resource type="Theme" id="Theme_sm0pu"]
+default_font = ExtResource("2_op3mt")
+default_font_size = 18
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_gf115")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 93.0
+offset_top = 24.0
+offset_right = 133.0
+offset_bottom = 64.0
+theme = SubResource("Theme_sm0pu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.125
+anchor_right = 26.125
+anchor_bottom = 15.425
+offset_right = -0.00012207
+offset_bottom = -6.10352e-05
+text = "lkjdfgldjfg"
+metadata/_edit_use_anchors_ = true

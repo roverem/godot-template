@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5vk8l5bjcw5e"]
+
+[ext_resource type="Script" path="res://scenes/INTRO/intro.gd" id="1_ep173"]
+[ext_resource type="FontFile" uid="uid://6llflj1col6e" path="res://assets/fonts/Jamma 8x16 Monospaced.ttf" id="2_j0t0i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixjk7"]
+font = ExtResource("2_j0t0i")
+font_size = 120
+outline_size = 11
+outline_color = Color(0.0784314, 0.733333, 0.0784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3r6wb"]
+font = ExtResource("2_j0t0i")
+shadow_size = 10
+shadow_color = Color(0.0712242, 0.0209546, 0.00286418, 0.447059)
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_ep173")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+text = "GAME NAME"
+label_settings = SubResource("LabelSettings_ixjk7")
+
+[node name="PressSomething" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+text = "PRESS ANY KEY TO CONTINUE"
+label_settings = SubResource("LabelSettings_3r6wb")
