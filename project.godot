@@ -12,12 +12,19 @@ config_version=5
 
 config/name="godot-template"
 run/main_scene="res://game.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Utils="*res://script/global/Utils.gd"
+Global="*res://script/global/Global.gd"
+SignalBus="*res://script/global/SignalBus.gd"
+States="*res://script/global/States.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 
