@@ -1,0 +1,191 @@
+{
+  "1": {
+    "Type": "ACTION",
+    "Text": "It’s a brand new day at the bottom of the sea and you still can’t breathe underwater. But don’t let that silly fact ruin your fun!",
+    "ActionType": "DO_NOTHING",
+    "DayToTrigger": 0,
+    "Amount1": 0,
+    "Amount2": 0,
+    "NPC": "None"
+  },
+  "2": {
+    "Type": "ACTION",
+    "Text": "You thought you were having an epiphany, but it turns out it was just your oxygen-deprived brain. A new scenario for a known experience.",
+    "ActionType": "DO_NOTHING",
+    "DayToTrigger": 0,
+    "Amount1": 0,
+    "Amount2": 0,
+    "NPC": "None"
+  },
+  "3": {
+    "Type": "ACTION",
+    "Text": "A group of clownfish tells the worst jokes you’ve ever heard, and you laugh anyway.",
+    "ActionType": "GAIN_MOXIE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "4": {
+    "Type": "ACTION",
+    "Text": "A bubble floats by, and you swear it whispers your name.",
+    "ActionType": "GAIN_BUBBLE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "5": {
+    "Type": "ACTION",
+    "Text": "A clam shuts tight when you try to say hello. Rude!",
+    "ActionType": "LOSE_MOXIE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "6": {
+    "Type": "ACTION",
+    "Text": "A shrimp asks you to help carry its oversized luggage. You politely decline.",
+    "ActionType": "LOSE_MOXIE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "7": {
+    "Type": "ACTION",
+    "Text": "A sand Bitcoin tells you to invest wisely, then disappears.",
+    "ActionType": "GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "8": {
+    "Type": "ACTION",
+    "Text": "A grumpy sea urchin tells you to “watch where you step!” even though you’re floating.",
+    "ActionType": "GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "9": {
+    "Type": "ACTION",
+    "Text": "A dolphin teaches you how to whistle underwater. It’s harder than it looks.",
+    "ActionType": "LOSE_BUBBLE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "10": {
+    "Type": "ACTION",
+    "Text": "An octopus invites you to play hide-and-seek. You’ll never win.",
+    "ActionType": "GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "11": {
+    "Type": "ACTION",
+    "Text": "A shrimp challenges you to a staring contest. You lose immediately.",
+    "ActionType": "GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "12": {
+    "Type": "ACTION",
+    "Text": "A whale waves at you with its tail, and you feel incredibly small.",
+    "ActionType": "LOSE_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "13": {
+    "Type": "ACTION",
+    "Text": "A sea slug claims it’s the fastest creature in the ocean. You nod politely.",
+    "ActionType": "GAIN_MOXIE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "14": {
+    "Type": "ACTION",
+    "Text": "Ouch! You find yourself in the wrong school (of fish). The fishiest of the bunch fin-slaps you for asking where the bathroom is…",
+    "ActionType": "LOSE_BUBBLE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "15": {
+    "Type": "ACTION",
+    "Text": "Fancy that! Even underwater, an eel’s zap can still leave your muscles numb. Fascinating!",
+    "ActionType": "LOSE_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "16": {
+    "Type": "ACTION",
+    "Text": "A jellyfish politely asks for directions, but you have no idea where you are either.",
+    "ActionType": "LOSE_MOXIE",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 0,
+    "NPC": null
+  },
+  "17": {
+    "Type": "DIALOG_ACTION",
+    "Text": "You had me at \"chew\".",
+    "ActionType": "LOSE_BUBBLE_GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 1,
+    "NPC": "None"
+  },
+  "18": {
+    "Type": "DIALOG_ACTION",
+    "Text": "It's on!",
+    "ActionType": "GAIN_BUBBLE_LOSE_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 1,
+    "NPC": "None"
+  },
+  "19": {
+    "Type": "DIALOG_ACTION",
+    "Text": "Rap furiously about your life!",
+    "ActionType": "GAIN_BUBBLE_LOSE_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 2,
+    "Amount2": 1,
+    "NPC": "None"
+  },
+  "20": {
+    "Type": "DIALOG_ACTION",
+    "Text": "PARTY HAAARD!",
+    "ActionType": "GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 2,
+    "Amount2": 0,
+    "NPC": "None"
+  },
+  "21": {
+    "Type": "DIALOG_ACTION",
+    "Text": "Time for acrobatic improv!",
+    "ActionType": "LOSE_BUBBLE_GAIN_HIJINKS",
+    "DayToTrigger": 0,
+    "Amount1": 1,
+    "Amount2": 1,
+    "NPC": "None"
+  }
+}

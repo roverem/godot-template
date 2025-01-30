@@ -1,0 +1,8 @@
+{
+  "Player": {
+    "DAYS_TO_WIN": 10,
+    "INITIAL_BUBBLES": 3,
+    "INITIAL_MOXIE": 2,
+    "INITIAL_HIJINKS": 2
+  }
+}
