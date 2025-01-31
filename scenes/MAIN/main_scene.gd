@@ -4,6 +4,12 @@ extends Node2D
 @onready var stateChart = %StateChart;
 
 func _ready():
-	var json_data = Utils.load_json_data_from_path(Utils.PATH_DAYS_JSON_DATA)
-	if json_data != null:
-		rich_text_label.text = JSON.stringify(json_data)
+	var day = GameData.get_current_day(randi_range(0, 20))
+	rich_text_label.text = day.text
+
+
+func _on_action_state_entered():
+	var randi = randi_range(0, 20)
+	var day = GameData.get_current_day(randi)
+	print( randi, day.text )
+	rich_text_label.text = day.text

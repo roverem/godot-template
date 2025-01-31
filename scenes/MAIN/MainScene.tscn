@@ -30,8 +30,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.125
+anchor_top = 10.0
 anchor_right = 12.65
-anchor_bottom = 15.425
+anchor_bottom = 25.425
 offset_right = -0.00012207
 offset_bottom = -6.10352e-05
 text = "lkjdfgldjfg"
@@ -69,3 +70,5 @@ to = NodePath("../../Idle")
 delay_in_seconds = "2"
 
 [node name="Character" parent="." instance=ExtResource("8_jutru")]
+
+[connection signal="state_entered" from="StateChart/Root/Action" to="." method="_on_action_state_entered"]

@@ -6,6 +6,6 @@
 position = Vector2(304, 333)
 
 [node name="Char" type="Sprite2D" parent="."]
-position = Vector2(-115, -42)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-177, -140)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_gy4jr")
