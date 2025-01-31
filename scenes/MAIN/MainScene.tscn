@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pwx1mb4vw1bg"]
+[gd_scene load_steps=10 format=3 uid="uid://pwx1mb4vw1bg"]
 
 [ext_resource type="Script" path="res://scenes/MAIN/main_scene.gd" id="1_gf115"]
 [ext_resource type="FontFile" uid="uid://ue8wrl75ioxi" path="res://assets/fonts/Blue Sky 8x8 Monospaced.ttf" id="2_op3mt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="5_uwi7g"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="6_ccnrp"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="7_usxtx"]
+[ext_resource type="PackedScene" uid="uid://bkc75f70x840f" path="res://scenes/MAIN/Character.tscn" id="8_jutru"]
 
 [sub_resource type="Theme" id="Theme_sm0pu"]
 default_font = ExtResource("2_op3mt")
@@ -66,3 +67,5 @@ script = ExtResource("6_ccnrp")
 script = ExtResource("7_usxtx")
 to = NodePath("../../Idle")
 delay_in_seconds = "2"
+
+[node name="Character" parent="." instance=ExtResource("8_jutru")]
