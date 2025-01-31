@@ -1,43 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5vk8l5bjcw5e"]
+[gd_scene load_steps=5 format=3 uid="uid://fluhl58hn4pw"]
 
+[ext_resource type="FontFile" uid="uid://b7e4kqqexyl7j" path="res://assets/fonts/Independent Modern 8x16 Monospaced.ttf" id="1_61l53"]
 [ext_resource type="Script" path="res://scenes/INTRO/intro.gd" id="1_ep173"]
-[ext_resource type="FontFile" uid="uid://6llflj1col6e" path="res://assets/fonts/Jamma 8x16 Monospaced.ttf" id="2_j0t0i"]
+[ext_resource type="Texture2D" uid="uid://f1g04vqjs3uy" path="res://icon.svg" id="3_7wgbr"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ixjk7"]
-font = ExtResource("2_j0t0i")
-font_size = 120
-outline_size = 11
-outline_color = Color(0.0784314, 0.733333, 0.0784314, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_3r6wb"]
-font = ExtResource("2_j0t0i")
-shadow_size = 10
-shadow_color = Color(0.0712242, 0.0209546, 0.00286418, 0.447059)
+[sub_resource type="LabelSettings" id="LabelSettings_ujdjl"]
+font = ExtResource("1_61l53")
+font_size = 64
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_ep173")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="Title" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-text = "GAME NAME"
-label_settings = SubResource("LabelSettings_ixjk7")
+[node name="Label" type="Label" parent="Control"]
+offset_left = 176.0
+offset_top = 159.0
+offset_right = 1003.0
+offset_bottom = 238.0
+text = "PRESS BUTTON TO START"
+label_settings = SubResource("LabelSettings_ujdjl")
 
-[node name="PressSomething" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-text = "PRESS ANY KEY TO CONTINUE"
-label_settings = SubResource("LabelSettings_3r6wb")
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 401.0
+offset_top = 338.0
+offset_right = 739.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_7wgbr")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="button_up" from="Control/Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b33lb8kdvhepi"]
+[gd_scene load_steps=3 format=3 uid="uid://b33lb8kdvhepi"]
 
-[ext_resource type="PackedScene" uid="uid://c5vk8l5bjcw5e" path="res://scenes/INTRO/Intro.tscn" id="1_cd6vx"]
+[ext_resource type="PackedScene" uid="uid://fluhl58hn4pw" path="res://scenes/INTRO/Intro.tscn" id="1_cd6vx"]
+[ext_resource type="Script" path="res://game.gd" id="1_ued5a"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_ued5a")
 
 [node name="Intro" parent="." instance=ExtResource("1_cd6vx")]
-position = Vector2(323, 126)
-scale = Vector2(4, 4)

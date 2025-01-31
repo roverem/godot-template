@@ -21,6 +21,7 @@ Utils="*res://script/global/Utils.gd"
 Global="*res://script/global/Global.gd"
 SignalBus="*res://script/global/SignalBus.gd"
 States="*res://script/global/States.gd"
+SceneManager="*res://script/global/SceneManager.gd"
 
 [editor_plugins]
 

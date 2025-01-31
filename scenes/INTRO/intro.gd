@@ -1,4 +1,4 @@
 extends Node2D
 
-func _ready():
-	print("STUFF HAPPENS")
+func _on_button_pressed():
+	SignalBus.game_started.emit()
