@@ -7,4 +7,4 @@ func _ready():
 
 
 func start_game():
-	SceneManager.swap_scenes("res://scenes/MAIN/MainScene.tscn", self, intro, "wipe_to_right");
+	SceneManager.swap_scenes("res://scenes/MAIN/MainScene.tscn", self, intro);
