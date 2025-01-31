@@ -25,7 +25,7 @@ SceneManager="*res://script/global/SceneManager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
 
 [rendering]
 
