@@ -25,6 +25,33 @@ offset_right = 133.0
 offset_bottom = 64.0
 theme = SubResource("Theme_sm0pu")
 
+[node name="AdvanceDayButton" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 208.0
+offset_top = 300.0
+offset_right = 463.0
+offset_bottom = 331.0
+text = "ADVANCE DAY!"
+
+[node name="Choice_A" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 339.0
+offset_right = 328.0
+offset_bottom = 370.0
+text = "CHOICE A"
+
+[node name="Choice_B" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 337.0
+offset_top = 340.0
+offset_right = 510.0
+offset_bottom = 371.0
+text = "CHOICE B"
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -35,8 +62,16 @@ anchor_right = 12.65
 anchor_bottom = 25.425
 offset_right = -0.00012207
 offset_bottom = -6.10352e-05
-text = "lkjdfgldjfg"
 metadata/_edit_use_anchors_ = true
+
+[node name="DayLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 205.0
+offset_top = 47.0
+offset_right = 472.0
+offset_bottom = 123.0
+text = "DAY"
 
 [node name="StateChartDebugger" parent="." instance=ExtResource("3_0uus2")]
 offset_left = 633.0
@@ -51,24 +86,113 @@ script = ExtResource("4_s5af4")
 
 [node name="Root" type="Node" parent="StateChart"]
 script = ExtResource("5_uwi7g")
-initial_state = NodePath("Idle")
+initial_state = NodePath("StartDay")
 
-[node name="Idle" type="Node" parent="StateChart/Root"]
+[node name="StartDay" type="Node" parent="StateChart/Root"]
 script = ExtResource("6_ccnrp")
 
-[node name="ToAction" type="Node" parent="StateChart/Root/Idle"]
+[node name="ToCheckCurrent" type="Node" parent="StateChart/Root/StartDay"]
 script = ExtResource("7_usxtx")
-to = NodePath("../../Action")
-delay_in_seconds = "2"
+to = NodePath("../../CheckCurrent")
+delay_in_seconds = "1.0"
 
-[node name="Action" type="Node" parent="StateChart/Root"]
+[node name="ReadText" type="Node" parent="StateChart/Root"]
 script = ExtResource("6_ccnrp")
 
-[node name="ToIdle" type="Node" parent="StateChart/Root/Action"]
+[node name="ToCheckCurrent" type="Node" parent="StateChart/Root/ReadText"]
 script = ExtResource("7_usxtx")
-to = NodePath("../../Idle")
-delay_in_seconds = "2"
+to = NodePath("../../CheckCurrent")
+event = &"check_next"
+delay_in_seconds = "0.0"
+
+[node name="ModifyStat" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToCheckCurrent" type="Node" parent="StateChart/Root/ModifyStat"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../CheckCurrent")
+delay_in_seconds = "1.0"
+
+[node name="PresentChoice" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToChoice_A" type="Node" parent="StateChart/Root/PresentChoice"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../SelectChoice_A")
+event = &"CHOICE_A"
+delay_in_seconds = "0.0"
+
+[node name="ToChoice_B" type="Node" parent="StateChart/Root/PresentChoice"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../SelectChoice_B")
+event = &"CHOICE_B"
+delay_in_seconds = "0.0"
+
+[node name="SelectChoice_A" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToShowOutcome" type="Node" parent="StateChart/Root/SelectChoice_A"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../ShowOutcome")
+delay_in_seconds = "1.0"
+
+[node name="SelectChoice_B" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToShowOutcome" type="Node" parent="StateChart/Root/SelectChoice_B"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../ShowOutcome")
+delay_in_seconds = "1.0"
+
+[node name="ShowOutcome" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToCheckCurrent" type="Node" parent="StateChart/Root/ShowOutcome"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../CheckCurrent")
+delay_in_seconds = "1.0"
+
+[node name="CheckCurrent" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_ccnrp")
+
+[node name="ToModifyStat" type="Node" parent="StateChart/Root/CheckCurrent"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../ModifyStat")
+event = &"STAT_MODIFY"
+delay_in_seconds = "0.0"
+
+[node name="ToPresentChoice" type="Node" parent="StateChart/Root/CheckCurrent"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../PresentChoice")
+event = &"CHOICE"
+delay_in_seconds = "0.0"
+
+[node name="ToStartDay" type="Node" parent="StateChart/Root/CheckCurrent"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../StartDay")
+event = &"start_day"
+delay_in_seconds = "0.0"
+
+[node name="ToReadText" type="Node" parent="StateChart/Root/CheckCurrent"]
+script = ExtResource("7_usxtx")
+to = NodePath("../../ReadText")
+event = &"TEXT"
+delay_in_seconds = "0.0"
+
+[node name="ToCheckCurrent" type="Node" parent="StateChart/Root/CheckCurrent"]
+script = ExtResource("7_usxtx")
+to = NodePath("..")
+event = &"check_next"
+delay_in_seconds = "0.0"
 
 [node name="Character" parent="." instance=ExtResource("8_jutru")]
 
-[connection signal="state_entered" from="StateChart/Root/Action" to="." method="_on_action_state_entered"]
+[connection signal="button_up" from="Control/AdvanceDayButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Control/Choice_A" to="." method="_on_choice_a_button_up"]
+[connection signal="button_up" from="Control/Choice_B" to="." method="_on_choice_b_button_up"]
+[connection signal="state_entered" from="StateChart/Root/StartDay" to="." method="_on_start_day_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/ReadText" to="." method="_on_read_text_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/ModifyStat" to="." method="_on_modify_stat_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/PresentChoice" to="." method="_on_present_choice_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/ShowOutcome" to="." method="_on_show_outcome_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/CheckCurrent" to="." method="_on_check_current_state_entered"]

@@ -1,191 +1,138 @@
-{
-  "1": {
-	"Type": "ACTION",
-	"Text": "It’s a brand new day at the bottom of the sea and you still can’t breathe underwater. But don’t let that silly fact ruin your fun!",
-	"ActionType": "DO_NOTHING",
-	"DayToTrigger": 0,
-	"Amount1": 0,
-	"Amount2": 0,
-	"NPC": "None"
+[
+  {
+	"DayID": 1,
+	"ChoiceID": null,
+	"Text": "TEXTO DE UN EVENTO SIN MUCHA TRASCENDENCIA",
+	"ActionType": "TEXT",
+	"Value": null,
+	"IsLast": true
   },
-  "2": {
-	"Type": "ACTION",
-	"Text": "You thought you were having an epiphany, but it turns out it was just your oxygen-deprived brain. A new scenario for a known experience.",
-	"ActionType": "DO_NOTHING",
-	"DayToTrigger": 0,
-	"Amount1": 0,
-	"Amount2": 0,
-	"NPC": "None"
+  {
+	"DayID": 2,
+	"ChoiceID": 1,
+	"Text": "ES EL DIA 2. ELEGIS OPCION A O B?",
+	"ActionType": "CHOICE",
+	"Value": null,
+	"IsLast": true
   },
-  "3": {
-	"Type": "ACTION",
-	"Text": "A group of clownfish tells the worst jokes you’ve ever heard, and you laugh anyway.",
-	"ActionType": "GAIN_MOXIE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 2,
+	"ChoiceID": 1,
+	"Text": "ELEGISTE OPCION A",
+	"ActionType": "CHOICE_A",
+	"Value": "[1,0,0]",
+	"IsLast": true
   },
-  "4": {
-	"Type": "ACTION",
-	"Text": "A bubble floats by, and you swear it whispers your name.",
-	"ActionType": "GAIN_BUBBLE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 2,
+	"ChoiceID": 1,
+	"Text": "ELEGISTE OPCION B",
+	"ActionType": "CHOICE_B",
+	"Value": "[1,1,0]",
+	"IsLast": true
   },
-  "5": {
-	"Type": "ACTION",
-	"Text": "A clam shuts tight when you try to say hello. Rude!",
-	"ActionType": "LOSE_MOXIE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 3,
+	"ChoiceID": null,
+	"Text": "MAS TEXTO DE COMIENZO DE DIA",
+	"ActionType": "TEXT",
+	"Value": null,
+	"IsLast": false
   },
-  "6": {
-	"Type": "ACTION",
-	"Text": "A shrimp asks you to help carry its oversized luggage. You politely decline.",
-	"ActionType": "LOSE_MOXIE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 3,
+	"ChoiceID": null,
+	"Text": "MODIFICACION DE STATS",
+	"ActionType": "STAT_MODIFY",
+	"Value": "[-3,0,0]",
+	"IsLast": true
   },
-  "7": {
-	"Type": "ACTION",
-	"Text": "A sand Bitcoin tells you to invest wisely, then disappears.",
-	"ActionType": "GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 2,
+	"Text": "EMPIEZA EL DIA 4. OPCIONES",
+	"ActionType": "CHOICE",
+	"Value": null,
+	"IsLast": false
   },
-  "8": {
-	"Type": "ACTION",
-	"Text": "A grumpy sea urchin tells you to “watch where you step!” even though you’re floating.",
-	"ActionType": "GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 2,
+	"Text": "OPCION A",
+	"ActionType": "CHOICE_A",
+	"Value": "[0,-2, 0]",
+	"IsLast": false
   },
-  "9": {
-	"Type": "ACTION",
-	"Text": "A dolphin teaches you how to whistle underwater. It’s harder than it looks.",
-	"ActionType": "LOSE_BUBBLE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 2,
+	"Text": "OPCION B",
+	"ActionType": "CHOICE_B",
+	"Value": "[0,2, 0]",
+	"IsLast": false
   },
-  "10": {
-	"Type": "ACTION",
-	"Text": "An octopus invites you to play hide-and-seek. You’ll never win.",
-	"ActionType": "GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": null,
+	"Text": "CONTINUACION DEL DIA 4",
+	"ActionType": "TEXT",
+	"Value": null,
+	"IsLast": false
   },
-  "11": {
-	"Type": "ACTION",
-	"Text": "A shrimp challenges you to a staring contest. You lose immediately.",
-	"ActionType": "GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 3,
+	"Text": "SEGUNDA OPCION DEL DIA 4",
+	"ActionType": "CHOICE",
+	"Value": null,
+	"IsLast": true
   },
-  "12": {
-	"Type": "ACTION",
-	"Text": "A whale waves at you with its tail, and you feel incredibly small.",
-	"ActionType": "LOSE_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 3,
+	"Text": "OPCION A",
+	"ActionType": "CHOICE_A",
+	"Value": "[0,-2, 0]",
+	"IsLast": true
   },
-  "13": {
-	"Type": "ACTION",
-	"Text": "A sea slug claims it’s the fastest creature in the ocean. You nod politely.",
-	"ActionType": "GAIN_MOXIE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 4,
+	"ChoiceID": 3,
+	"Text": "OPCION B",
+	"ActionType": "CHOICE_B",
+	"Value": "[0,2, 0]",
+	"IsLast": true
   },
-  "14": {
-	"Type": "ACTION",
-	"Text": "Ouch! You find yourself in the wrong school (of fish). The fishiest of the bunch fin-slaps you for asking where the bathroom is…",
-	"ActionType": "LOSE_BUBBLE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 5,
+	"ChoiceID": 4,
+	"Text": "EMPEZO EL DIA 5 CON UNA PREGUNTA",
+	"ActionType": "CHOICE",
+	"Value": null,
+	"IsLast": false
   },
-  "15": {
-	"Type": "ACTION",
-	"Text": "Fancy that! Even underwater, an eel’s zap can still leave your muscles numb. Fascinating!",
-	"ActionType": "LOSE_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 5,
+	"ChoiceID": 4,
+	"Text": "OPCION A",
+	"ActionType": "CHOICE_A",
+	"Value": "[0,-2, 0]",
+	"IsLast": false
   },
-  "16": {
-	"Type": "ACTION",
-	"Text": "A jellyfish politely asks for directions, but you have no idea where you are either.",
-	"ActionType": "LOSE_MOXIE",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 0,
-	"NPC": null
+  {
+	"DayID": 5,
+	"ChoiceID": 4,
+	"Text": "OPCION B",
+	"ActionType": "CHOICE_B",
+	"Value": "[0,2, 0]",
+	"IsLast": false
   },
-  "17": {
-	"Type": "DIALOG_ACTION",
-	"Text": "You had me at \"chew\".",
-	"ActionType": "LOSE_BUBBLE_GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 1,
-	"NPC": "None"
-  },
-  "18": {
-	"Type": "DIALOG_ACTION",
-	"Text": "It's on!",
-	"ActionType": "GAIN_BUBBLE_LOSE_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 1,
-	"NPC": "None"
-  },
-  "19": {
-	"Type": "DIALOG_ACTION",
-	"Text": "Rap furiously about your life!",
-	"ActionType": "GAIN_BUBBLE_LOSE_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 2,
-	"Amount2": 1,
-	"NPC": "None"
-  },
-  "20": {
-	"Type": "DIALOG_ACTION",
-	"Text": "PARTY HAAARD!",
-	"ActionType": "GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 2,
-	"Amount2": 0,
-	"NPC": "None"
-  },
-  "21": {
-	"Type": "DIALOG_ACTION",
-	"Text": "Time for acrobatic improv!",
-	"ActionType": "LOSE_BUBBLE_GAIN_HIJINKS",
-	"DayToTrigger": 0,
-	"Amount1": 1,
-	"Amount2": 1,
-	"NPC": "None"
+  {
+	"DayID": 5,
+	"ChoiceID": null,
+	"Text": "TEXTO DE CIERRE DEL DIA 5",
+	"ActionType": "TEXT",
+	"Value": null,
+	"IsLast": true
   }
-}
+]

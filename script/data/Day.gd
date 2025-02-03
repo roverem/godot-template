@@ -1,8 +1,12 @@
 extends Node
 class_name  Day
 
-var type:String
-var text:String
-var amount1:int
-var amount2:int
-var npc_id:String
+var actions:Array[Action]
+var current_action:int
+
+
+func get_current_action()->Action:
+	return actions[current_action]
+
+func advance_action():
+	current_action += 1

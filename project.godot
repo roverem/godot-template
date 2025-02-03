@@ -24,6 +24,10 @@ States="*res://script/global/States.gd"
 SceneManager="*res://script/global/SceneManager.gd"
 GameData="*res://script/global/GameData.gd"
 
+[display]
+
+window/size/viewport_height=600
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
