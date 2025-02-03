@@ -40,7 +40,7 @@ func _on_button_button_up():
 
 func _on_read_text_state_entered():
 	var current_action = current_day.get_current_action()
-	rich_text_label.text += "\n" +  current_action.text
+	#rich_text_label.text += "\n" +  current_action.text
 	%AdvanceDayButton.visible = true
 
 
