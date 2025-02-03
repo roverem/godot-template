@@ -8,6 +8,7 @@ var current_day:Day
 
 func _on_start_day_state_entered():
 	_clean_screen()
+	rich_text_label.text = "";
 	current_day_id += 1
 	current_day = GameData.get_current_day(current_day_id)
 	current_day.current_action = 0
@@ -28,7 +29,7 @@ func _on_check_current_state_entered():
 func show_current_action():
 	var current_action = current_day.get_current_action()
 	current_action.was_shown = true
-	rich_text_label.text = current_action.text
+	rich_text_label.text += "\n" + current_action.text
 	%StateChart.send_event(current_action.type)
 
 func check_next_action():
@@ -39,7 +40,7 @@ func _on_button_button_up():
 
 func _on_read_text_state_entered():
 	var current_action = current_day.get_current_action()
-	rich_text_label.text = current_action.text
+	rich_text_label.text += "\n" +  current_action.text
 	%AdvanceDayButton.visible = true
 
 
@@ -67,8 +68,8 @@ func _clean_screen():
 
 func _on_show_outcome_state_entered():
 	var current_action = current_day.get_current_action()
-	rich_text_label.text = current_action.choice_selected.text
+	rich_text_label.text  += "\n" +  current_action.choice_selected.text
 
 
 func _on_modify_stat_state_entered():
-	rich_text_label.text = "STAT MODIFIED"
+	rich_text_label.text  += "\n" +  "STAT MODIFIED"
