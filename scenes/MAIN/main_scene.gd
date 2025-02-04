@@ -71,22 +71,25 @@ func _on_show_outcome_state_entered():
 	var current_action = current_day.get_current_action()
 	rich_text_label.text  += "\n" +  current_action.choice_selected.text
 	%Values.text = str(current_action.value)
+	_update_stats()
 
 
 func _on_modify_stat_state_entered():
 	rich_text_label.text  += "\n" +  "STAT MODIFIED"
-	var current_action = current_day.get_current_action()
-	var bubble:int = current_action.value[0]
-	var moxie:int = current_action.value[1]
-	var hijinks:int = current_action.value[2]
-	
-	GameData.player_data.bubbles += bubble
-	GameData.player_data.hijinks += hijinks
-	GameData.player_data.moxie += moxie
-	
 	_update_stats()
 
 func _update_stats():
+	if (current_day != null):
+		var current_action = current_day.get_current_action()
+		var value_holder = current_action.value if current_action.choice_selected == null else current_action.choice_selected.value
+		var bubble:int = value_holder[0]
+		var moxie:int = value_holder[1]
+		var hijinks:int = value_holder[2]
+		
+		GameData.player_data.bubbles += bubble
+		GameData.player_data.hijinks += hijinks
+		GameData.player_data.moxie += moxie
+	
 	%BubbleStat.update_stat(GameData.player_data.bubbles)
 	%HijinksStat.update_stat(GameData.player_data.hijinks)
 	%MoxieStat.update_stat(GameData.player_data.moxie)
