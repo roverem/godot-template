@@ -1,17 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://pwx1mb4vw1bg"]
+[gd_scene load_steps=15 format=3 uid="uid://pwx1mb4vw1bg"]
 
 [ext_resource type="Script" path="res://scenes/MAIN/main_scene.gd" id="1_gf115"]
 [ext_resource type="FontFile" uid="uid://ue8wrl75ioxi" path="res://assets/fonts/Blue Sky 8x8 Monospaced.ttf" id="2_op3mt"]
 [ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="3_0uus2"]
+[ext_resource type="Script" path="res://scenes/MAIN/stat_container.gd" id="3_b2o4t"]
+[ext_resource type="Texture2D" uid="uid://bkgtyixtwjm77" path="res://assets/sprites/ICON_BUBBLES.png" id="4_od5gi"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="4_s5af4"]
+[ext_resource type="Texture2D" uid="uid://bqh38oekbxcv6" path="res://assets/sprites/ICON_HIJINKS.png" id="5_srmqe"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="5_uwi7g"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="6_ccnrp"]
+[ext_resource type="Texture2D" uid="uid://dnmh0ea3gutrv" path="res://assets/sprites/ICON_MOXIE.png" id="6_cil3m"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="7_usxtx"]
 [ext_resource type="PackedScene" uid="uid://bkc75f70x840f" path="res://scenes/MAIN/Character.tscn" id="8_jutru"]
 
 [sub_resource type="Theme" id="Theme_sm0pu"]
 default_font = ExtResource("2_op3mt")
 default_font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltf2o"]
+font_size = 80
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_gf115")
@@ -72,6 +79,66 @@ offset_top = 47.0
 offset_right = 472.0
 offset_bottom = 123.0
 text = "DAY"
+
+[node name="Values" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 168.0
+offset_top = 511.0
+offset_right = 352.0
+offset_bottom = 562.0
+text = "values
+if any"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 218.0
+offset_right = 1224.0
+offset_bottom = 357.0
+scale = Vector2(0.419593, 0.419593)
+
+[node name="BubbleStat" type="HBoxContainer" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_b2o4t")
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/BubbleStat"]
+layout_mode = 2
+texture = ExtResource("4_od5gi")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/BubbleStat"]
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_ltf2o")
+
+[node name="HijinksStat" type="HBoxContainer" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_b2o4t")
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/HijinksStat"]
+layout_mode = 2
+texture = ExtResource("5_srmqe")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/HijinksStat"]
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_ltf2o")
+
+[node name="MoxieStat" type="HBoxContainer" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_b2o4t")
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/MoxieStat"]
+layout_mode = 2
+texture = ExtResource("6_cil3m")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/MoxieStat"]
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_ltf2o")
 
 [node name="StateChartDebugger" parent="." instance=ExtResource("3_0uus2")]
 offset_left = 633.0

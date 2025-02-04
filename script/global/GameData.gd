@@ -4,9 +4,28 @@ var day_ids:Array[int];
 var days_by_id:Array[Day];
 var choices:Dictionary
 var unfiltered_choices:Array[Choice]
+var player_data:PlayerData
 
 func _ready():
-	SignalBus.game_started.connect( _load_game_data )
+	SignalBus.game_started.connect( _load_data )
+	
+func _load_data():
+	_load_player_data()
+	_load_game_data()
+	SignalBus.game_data_loaded.emit()
+	
+func _load_player_data():
+	var json_data = Utils.load_json_data_from_path(Utils.PATH_PLAYER_JSON_DATA)
+	if json_data == null:
+		push_error( "NO JSON DATA " + Utils.PATH_PLAYER_JSON_DATA)
+	
+	var data:Dictionary = json_data["Player"]
+	player_data = PlayerData.new()
+	player_data.days_to_win = data["DAYS_TO_WIN"]
+	player_data.bubbles = data["INITIAL_BUBBLES"]
+	player_data.hijinks = data["INITIAL_HIJINKS"]
+	player_data.moxie = data["INITIAL_MOXIE"]
+	
 
 func _load_game_data():
 	day_ids = []
@@ -15,7 +34,7 @@ func _load_game_data():
 	
 	var json_data = Utils.load_json_data_from_path(Utils.PATH_DAYS_JSON_DATA)
 	if json_data == null:
-		push_error( "NO JSON DATA" )
+		push_error( "NO JSON DATA " + Utils.PATH_DAYS_JSON_DATA )
 	
 	#FIND ALL DAY IDS
 	for i in len(json_data):
@@ -78,9 +97,12 @@ func get_actions_in_day(json_data, day_id)->Array[Action]:
 	return result
 
 func get_value_from_json( value:String )->Array[int]:
-	var result:Array[int] = [0,0,0];
-	#TODO
-	print(value)
+	var result:Array[int] = [];
+	var removed_brackets = value.replace("[", "");
+	removed_brackets = removed_brackets.replace("]", "")
+	var split_values = removed_brackets.split(",")
+	for sv in split_values:
+		result.append( int(sv) )
 	return result
 	
 func _randomize_days():

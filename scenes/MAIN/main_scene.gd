@@ -6,6 +6,9 @@ extends Node2D
 var current_day_id:int = -1
 var current_day:Day
 
+func _ready():
+	_update_stats()
+
 func _on_start_day_state_entered():
 	_clean_screen()
 	rich_text_label.text = "";
@@ -30,6 +33,7 @@ func show_current_action():
 	var current_action = current_day.get_current_action()
 	current_action.was_shown = true
 	rich_text_label.text += "\n" + current_action.text
+	%Values.text = str(current_action.value)
 	%StateChart.send_event(current_action.type)
 
 func check_next_action():
@@ -39,10 +43,7 @@ func _on_button_button_up():
 	check_next_action()
 
 func _on_read_text_state_entered():
-	var current_action = current_day.get_current_action()
-	#rich_text_label.text += "\n" +  current_action.text
 	%AdvanceDayButton.visible = true
-
 
 func _on_choice_a_button_up():
 	_clean_screen()
@@ -69,7 +70,23 @@ func _clean_screen():
 func _on_show_outcome_state_entered():
 	var current_action = current_day.get_current_action()
 	rich_text_label.text  += "\n" +  current_action.choice_selected.text
+	%Values.text = str(current_action.value)
 
 
 func _on_modify_stat_state_entered():
 	rich_text_label.text  += "\n" +  "STAT MODIFIED"
+	var current_action = current_day.get_current_action()
+	var bubble:int = current_action.value[0]
+	var moxie:int = current_action.value[1]
+	var hijinks:int = current_action.value[2]
+	
+	GameData.player_data.bubbles += bubble
+	GameData.player_data.hijinks += hijinks
+	GameData.player_data.moxie += moxie
+	
+	_update_stats()
+
+func _update_stats():
+	%BubbleStat.update_stat(GameData.player_data.bubbles)
+	%HijinksStat.update_stat(GameData.player_data.hijinks)
+	%MoxieStat.update_stat(GameData.player_data.moxie)
